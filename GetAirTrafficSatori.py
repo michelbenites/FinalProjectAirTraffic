@@ -24,12 +24,12 @@ sflight  = sys.argv[2]
 # Set the producer for Kafka.
 producer = KafkaProducer(bootstrap_servers='localhost:9092',value_serializer=lambda v: json.dumps(v).encode('utf-8'))
 
-# Set elasticsearch connection.
-es = Elasticsearch([{'host': '35.201.227.160', 'port': 9200}])
+# Set elasticsearch connection. #### Must change the host ####
+es = Elasticsearch([{'host': 'XX.XXX.XXX.XXX', 'port': 9200}]) 
 
-# Set the variables to connect satori website.
+# Set the variables to connect satori website. ####You need to get the appkey from https://www.satori.com/livedata/channels/air-traffic ####
 endpoint = "wss://open-data.api.satori.com"
-appkey = "73eF3D8DF0c428eb7a44e6D14EbAAd9a"
+appkey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 channel = "air-traffic"
 
 # Get infromation regarding to airline names
